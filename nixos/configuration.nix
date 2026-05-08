@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";  
 
   # Network and hostname
-  networking.hostName = "nixos";
+  networking.hostName = "nixos33";
   networking.networkmanager.enable = true;
 
   # Time Zone
