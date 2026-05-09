@@ -20,6 +20,7 @@
 	  home-manager.useGlobalPkgs = true;
   	  home-manager.useUserPackages = true;
 	  home-manager.users.gxbbab = import ./home/home.nix;
+          home-manager.backupFileExtension = "bak";
         }
       ];
     };

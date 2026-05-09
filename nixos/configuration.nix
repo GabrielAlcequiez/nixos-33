@@ -77,7 +77,8 @@
       };
 
     }; 
-  
+ 
+  services.upower.enable = true; 
   # NVIDIA Drivers and Config
   services.xserver.videoDrivers = [ "nvidia" "amdgpu"];
   hardware = {
@@ -137,6 +138,10 @@
       tree
     ];
   };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   programs.firefox.enable = true;
   programs.ssh.startAgent = true;
