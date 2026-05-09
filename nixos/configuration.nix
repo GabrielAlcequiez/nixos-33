@@ -76,24 +76,8 @@
 
       };
 
-    };
-
-
+    }; 
   
-  
-  
-  #services.auto-cpufreq.settings = {
-  #  charger = {
-  #    governor = "performance";
-  #    turbo = "never"; # Aquí desactivas el Turbo Boost
-  #  };
-  #  battery = {
-  #    governor = "powersave";
-  #    turbo = "never";
-  #  };
-  #};
-
-
   # NVIDIA Drivers and Config
   services.xserver.videoDrivers = [ "nvidia" "amdgpu"];
   hardware = {
@@ -142,10 +126,13 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   
+  programs.zsh.enable = true;
+
   # User account
   users.users.gxbbab = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh; 
     packages = with pkgs; [
       tree
     ];
