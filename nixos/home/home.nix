@@ -4,7 +4,7 @@
   imports = [
     ./shell.nix
     ./kitty.nix
-    ./fastfetch/fastfetch.nix
+    ./fastfetch/fastfetch.nix 
   ];
 
   home.username = "gxbbab";

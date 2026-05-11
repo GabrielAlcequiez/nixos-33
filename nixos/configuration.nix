@@ -51,6 +51,7 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     konsole
   ];
+  services.gnome.gcr-ssh-agent.enable = false;
 
   # AUTO-CPUFREQ (To better control with temps)
   services.power-profiles-daemon.enable = false;
@@ -121,6 +122,13 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+
+   extraConfig.pipewire."92-low-latency" = {
+      "context.properties" = {
+        "default.clock.rate" = 48000;
+        "default.clock.quantum" = 1024;
+      };
+    }; 
   };
 
   # Bluetooth 
@@ -143,6 +151,8 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  # Niri installation
+  programs.niri.enable = true;
   programs.firefox.enable = true;
   programs.ssh.startAgent = true;
   # Packages installed in system profile
@@ -151,6 +161,7 @@
   environment.systemPackages = with pkgs; [
     vim
     kitty
+    fuzzel
     wget
     git
     fastfetch
@@ -163,9 +174,10 @@
     obsidian
     bat
     libreoffice-fresh
-    discord
+    vesktop
     vencord
     teams-for-linux
+    obs-studio
   ];
 
 }
